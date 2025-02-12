@@ -1,9 +1,16 @@
 from fastapi import FastAPI, UploadFile, File
+from fastapi.middleware.cors import CORSMiddleware
 import requests
 import io
 import json
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "http://localhost:3000",
+]
 
 # 🔹 Replace with your Azure details
 AZURE_SUBSCRIPTION_KEY = "12OraUPwInb9Gb0LyCQycn4uoAxuFRQWLYR1j1aPIe5DiwXDCC5EJQQJ99BBACYeBjFXJ3w3AAAEACOG7sdg"
